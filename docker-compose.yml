@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  lprogress-db:
+    container_name: lprogress-db
+    image: postgres:alpine
+    volumes:
+      - ./arkscrapdb:/var/opt/postgres/data
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=db
+    ports:
+      - "5433:5432"
+    restart: unless-stopped
+
+
+  
+
+volumes:
+  lprogress-db:
